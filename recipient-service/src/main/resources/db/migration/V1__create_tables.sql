@@ -1,5 +1,5 @@
 CREATE TABLE recipient (
-    id BIGINT PRIMARY KEY,
+    id BIGINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     creator_id UUID,
     first_name VARCHAR(50) NOT NULL,
     last_name VARCHAR(50),

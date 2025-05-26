@@ -26,7 +26,7 @@ public class RecipientController {
 
     RecipientService recipientService;
 
-    @PostMapping("/")
+    @PostMapping()
     public ResponseEntity<RecipientResponseDto> createRecipient(@RequestBody RecipientRequestDto recipientRequestDto) {
         RecipientResponseDto responseDto = recipientService.createRecipient(recipientRequestDto);
         return ResponseEntity.status(HttpStatus.CREATED).body(responseDto);
@@ -38,7 +38,7 @@ public class RecipientController {
         return ResponseEntity.ok(responseDto);
     }
 
-    @GetMapping("/")
+    @GetMapping()
     public ResponseEntity<List<RecipientResponseDto>> getAllRecipients() {
         return ResponseEntity.ok(recipientService.getAllRecipients());
     }

@@ -6,7 +6,6 @@ import lombok.AccessLevel;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
 
-import java.time.Instant;
 import java.util.Map;
 
 @Data
@@ -15,10 +14,8 @@ import java.util.Map;
 public class RecipientRequestDto {
     Long id;
     String firstName;
-    String LastName;
+    String lastName;
     String organization;
     Map<NotificationType, String> contactData;
-    Instant createdAt;
-    Instant updatedAt;
 }
 

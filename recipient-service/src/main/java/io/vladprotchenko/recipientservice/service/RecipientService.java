@@ -26,6 +26,7 @@ public class RecipientService {
 
     @Transactional
     public RecipientResponseDto createRecipient(RecipientRequestDto recipientRequestDto) {
+        log.info("creating recipient");
         Recipient recipient = recipientMapper.toEntity(recipientRequestDto);
         recipient.setCreatorId(authenticationFacade.getAccountIdFromAuthentication());
         Recipient saved = recipientRepository.save(recipient);
@@ -41,6 +42,7 @@ public class RecipientService {
 
     @Transactional(readOnly = true)
     public List<RecipientResponseDto> getAllRecipients() {
+        log.info("extracting all recipients");
         return recipientMapper.toResponseDtoList(recipientRepository.findAll());
     }
 
